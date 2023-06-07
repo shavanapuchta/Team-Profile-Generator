@@ -19,15 +19,8 @@ function init() {
                 message: 'What would you like to do?',
                 choices: ['Add Employee', 'Exit'],
             },
-            {
-                type: 'confirm',
-                name: 'addEmployee',
-                message: 'Would you like to add an employee?',
-                when: ({ menuOption }) => menuOption === 'Add Employee',
-            },
-        ])
-        .then((answers) => {
-            if (answers.menuOption === 'Add Employee' && answers.addEmployee) {
+        ]).then((answers) => {
+            if (answers.menuOption === 'Add Employee' && answers.addEmployeeDetails) {
                 addEmployeeDetails();
             }
 
