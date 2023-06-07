@@ -1,7 +1,6 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const renderHTML = require("./lib/generateHTML");
 const generateTeam = require("./src/template.js");
 
 const inquirer = require("inquirer");
@@ -125,9 +124,9 @@ function addIntern() {
 }
 
 function htmlBuilder () {
-    console.log("Team created!")
+    console.log("Employee added!")
 
-    fs.writeFileSync(outputPath, generateTeam(teamArray), "UTF-8")
+    fs.writeFileSync('./dist/index.html', generateTeam(teamArray), "UTF-8")
 
 }
 
